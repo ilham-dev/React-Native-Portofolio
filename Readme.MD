@@ -8,16 +8,16 @@
 
 #### Install all dependecie
 
-        npm install or yarn
+    npm install or yarn
 
 #### Run For Android
 
-        run your emulator or connected your device
-        react-native run-android
+    run your emulator or connected your device
+    react-native run-android
 
 #### Run For Ios
 
-        react-native run-ios
-        or open xcode project in folder IOS
+    react-native run-ios
+    or open xcode project in folder IOS
 
 ## Have Fun :)
