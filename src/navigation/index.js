@@ -3,13 +3,16 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import Home from "../pages/HomeScreen";
 import Repo from "../pages/RepoScreen";
+import About from "../pages/AboutScreen";
+// import Tab from "../pages/Tab";
 
 import { theme } from "../constants";
 
 const screens = createStackNavigator(
   {
     Home,
-    Repo
+    Repo,
+    About
   },
   {
     defaultNavigationOptions: {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, LinearGradient } from "react-native";
-// import LinearGradient from 'react-native-linear-gradient';
-import rgba from "hex-to-rgba";
+import { StyleSheet } from "react-native";
+import * as Progressbar from "react-native-progress";
+import { theme, mocks } from "../constants";
 
 import Block from "./Block";
 
@@ -24,20 +24,7 @@ class Progress extends Component {
         style={[styles.background, styles]}
         {...props}
       >
-        <LinearGradient
-          end={{ x: 1, y: 0 }}
-          style={[styles.overlay, { flex: value }]}
-          colors={[
-            rgba(startColor, `${opacity}`),
-            rgba(endColor, `${opacity}`)
-          ]}
-        >
-          <LinearGradient
-            end={{ x: 1, y: 0 }}
-            colors={[startColor, endColor]}
-            style={[styles.active, { flex: value }]}
-          />
-        </LinearGradient>
+        <Progressbar.Bar width={340} progress={value} />
       </Block>
     );
   }

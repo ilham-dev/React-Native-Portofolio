@@ -44,7 +44,10 @@ export default class Welcome extends Component {
     const { navigation } = this.props;
 
     return (
-      <TouchableOpacity activeOpacity={0.8}>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => navigation.navigate("About")}
+      >
         <Card
           shadow
           style={{ paddingVertical: theme.sizes.padding, marginVertical: 30 }}
@@ -114,32 +117,77 @@ export default class Welcome extends Component {
   }
 
   renderAwards() {
+    const { navigation } = this.props;
     return (
-      <View
-        // end={{ x: 1, y: 0 }}
-        style={[blockStyles.row, cardStyles.card, styles.awards]}
-        colors={["#FF988A", theme.colors.accent]}
-      >
-        <Block middle flex={0.4}>
-          <Badge color={rgba(theme.colors.white, "0.2")} size={74}>
-            <Badge color={rgba(theme.colors.white, "0.2")} size={52}>
-              {/* <Icon.FontAwesome
-                name="trophy"
-                color="white"
-                size={theme.sizes.h2}
-              /> */}
-            </Badge>
-          </Badge>
-        </Block>
-        <Block middle>
-          <Text size={theme.sizes.base} spacing={0.4} medium white>
-            Wohoo!
-          </Text>
-          <Text size={theme.sizes.base} spacing={0.4} medium white>
-            Safe Driver Trophy!
+      <React.Fragment>
+        <Block style={{ marginBottom: theme.sizes.base }}>
+          <Text spacing={0.4} transform="uppercase">
+            Main Menu
           </Text>
         </Block>
-      </View>
+        <Card
+          shadow
+          style={{ paddingVertical: theme.sizes.padding, marginVertical: 0 }}
+        >
+          <Block>
+            <Block row>
+              <Block center>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.center}
+                  onPress={() => navigation.navigate("About")}
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={{
+                      uri: "https://img.icons8.com/dusk/64/000000/reading.png"
+                    }}
+                    style={styles.icons}
+                  />
+                  <Text body spacing={0.7}>
+                    Education
+                  </Text>
+                </TouchableOpacity>
+              </Block>
+              <Block flex={false} color="gray3" style={styles.vLine} />
+
+              <Block center>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.center}
+                  onPress={() => navigation.navigate("Repo")}
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={{
+                      uri: "https://img.icons8.com/dusk/64/000000/developer.png"
+                    }}
+                    style={styles.icons}
+                  />
+                  <Text body spacing={0.7}>
+                    Skill
+                  </Text>
+                </TouchableOpacity>
+              </Block>
+
+              <Block flex={false} color="gray3" style={styles.vLine} />
+
+              <Block center>
+                <Image
+                  resizeMode="contain"
+                  source={{
+                    uri: "https://img.icons8.com/dusk/64/000000/report-card.png"
+                  }}
+                  style={styles.icons}
+                />
+                <Text body spacing={0.7}>
+                  Experience
+                </Text>
+              </Block>
+            </Block>
+          </Block>
+        </Card>
+      </React.Fragment>
     );
   }
 
@@ -230,7 +278,7 @@ export default class Welcome extends Component {
       <React.Fragment>
         <ScrollView style={styles.welcome}>
           {this.renderHeader()}
-          {/* {this.renderAwards()} */}
+          {this.renderAwards()}
           {this.renderProject()}
         </ScrollView>
         {/* {this.renderTripButton()} */}
@@ -277,9 +325,20 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     width: 170
   },
+  icons: {
+    borderColor: "#fff",
+    borderRadius: 85,
+    borderWidth: 3,
+    height: 40,
+    marginBottom: 15,
+    width: 40
+  },
   startTrip: {
     position: "absolute",
     left: (width - 144) / 2,
     bottom: 0
+  },
+  center: {
+    alignItems: "center"
   }
 });
