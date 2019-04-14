@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
+  Card,
   TouchableOpacity,
   Image,
   ImageBackground,
@@ -15,7 +16,14 @@ import {
 } from "react-native";
 import Timeline from "react-native-timeline-listview";
 import { theme, mocks } from "../constants";
-import { Block, Badge, Card, Text, Progress } from "../components";
+import {
+  Block,
+  Badge,
+  Card as Kartu,
+  Text,
+  Progress,
+  CardImage
+} from "../components";
 
 export default class Repo extends Component {
   constructor() {
@@ -28,7 +36,7 @@ export default class Repo extends Component {
         <Text style={[theme.fonts.header, { paddingLeft: 0 }]}>Skills</Text>
       ),
       headerLeft: (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack(null)}>
           <Block flex={false} style={{ top: -17 }}>
             <Image
               resizeMode="contain"
@@ -50,33 +58,51 @@ export default class Repo extends Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.welcome}>
-          {/* <Card shadow style={{ paddingVertical: theme.sizes.base * 2 }}> */}
-          <ImageBackground
-            source={{
-              uri:
-                "https://www.backgroundcheckall.com/wp-content/uploads/2017/12/background-gradient-blue.png"
-            }}
-            style={{
-              position: "relative",
-              top: 0,
-              left: 0
-            }}
-          >
-            <Card shadow style={{ marginBottom: theme.sizes.base }}>
+          {/* <K shadow style={{ paddingVertical: theme.sizes.base * 2 }}> */}
+          <View style={{ borderRadius: 15, marginBottom: theme.sizes.base }}>
+            <ImageBackground
+              source={{
+                uri:
+                  "https://colorlib.com/preview/theme/sierra/img/home-slider/slider-bg-1.png"
+              }}
+              style={{ resizeMode: "stretch", padding: 20 }}
+              imageStyle={{ borderRadius: 25 }}
+            >
               <Block>
                 <Block row space="between" style={{ paddingLeft: 6 }}>
-                  <Text body spacing={0.7}>
+                  <Text body spacing={0.7} black bold>
                     Breaking
                   </Text>
-                  <Text caption spacing={0.7}>
+                  <Text caption spacing={0.7} black bold>
                     8.1
                   </Text>
                 </Block>
                 <Progress value={0.81} />
               </Block>
-            </Card>
+            </ImageBackground>
+          </View>
+
+          <ImageBackground
+            source={{
+              uri:
+                "https://colorlib.com/preview/theme/sierra/img/home-slider/slider-bg-1.png"
+            }}
+            style={{ resizeMode: "stretch", padding: 20 }}
+            imageStyle={{ borderRadius: 25 }}
+          >
+            <Block>
+              <Block row space="between" style={{ paddingLeft: 6 }}>
+                <Text body spacing={0.7} black bold>
+                  Breaking
+                </Text>
+                <Text caption spacing={0.7} black bold>
+                  8.1
+                </Text>
+              </Block>
+              <Progress value={0.81} />
+            </Block>
           </ImageBackground>
-          <Card shadow style={{ marginBottom: theme.sizes.base }}>
+          <Kartu shadow style={{ marginBottom: theme.sizes.base }}>
             <Block style={{ marginBottom: theme.sizes.base }}>
               <Block row space="between" style={{ paddingLeft: 6 }}>
                 <Text body spacing={0.7}>
@@ -88,8 +114,8 @@ export default class Repo extends Component {
               </Block>
               <Progress value={0.98} />
             </Block>
-          </Card>
-          <Card shadow style={{ marginBottom: theme.sizes.base }}>
+          </Kartu>
+          <Kartu shadow style={{ marginBottom: theme.sizes.base }}>
             <Block style={{ marginBottom: theme.sizes.base }}>
               <Block row space="between" style={{ paddingLeft: 6 }}>
                 <Text body spacing={0.7}>
@@ -101,7 +127,7 @@ export default class Repo extends Component {
               </Block>
               <Progress value={0.74} />
             </Block>
-          </Card>
+          </Kartu>
         </ScrollView>
       </View>
     );

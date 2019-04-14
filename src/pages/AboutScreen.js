@@ -21,31 +21,31 @@ export default class About extends Component {
     super();
     this.data = [
       {
-        time: "09:00",
-        title: "Archery Training",
+        time: "2011 - 2016",
+        title: "Universitas Islam Negeri Alauddin Makassar",
         description:
-          "The Beginner Archery and Beginner Crossbow course does not require you to bring any equipment, since everything you need will be provided for the course. ",
+          "Salah satu universitas negeri di makassar, dengan mengambil jurusan Teknik Informatika. ",
         circleColor: "#009688",
         lineColor: "#009688"
       },
       {
-        time: "10:45",
-        title: "Play Badminton",
+        time: "2008 - 2011",
+        title: "SMA Negeri 3 Pasangkayu",
         description:
-          "Badminton is a racquet sport played using racquets to hit a shuttlecock across a net."
+          "sekolah yang tepat di samping SMP saya, dan mengambilan jurusan IPA."
       },
-      { time: "12:00", title: "Lunch", icon: require("../assets/lunch.png") },
       {
-        time: "14:00",
-        title: "Watch Soccer",
+        time: "2005 - 2008",
+        title: "SMP Negeri 4 Pasangkayu",
         description:
-          "Team sport played between two teams of eleven players with a spherical ball. ",
+          "salah satu sekolah ternama di kampung saya, yang waktuh tempuh dari rumah ke sekolah bisa sampai 1 jam dengan menggunakan mobil truck, suka duka di lalui bersama .",
         lineColor: "#009688"
       },
       {
-        time: "16:30",
-        title: "Go to Fitness center",
-        description: "Look out for the Best Gym & Fitness Centers around me :)",
+        time: "1999 - 2005",
+        title: "SD Inpres Motu",
+        description:
+          "SD Inpress Motu Terletak di kabupaten mamuju utara, sulawesi barat",
         circleColor: "#009688"
       }
     ];
