@@ -57,7 +57,7 @@ export default class About extends Component {
         <Text style={[theme.fonts.header, { paddingLeft: 0 }]}>Education</Text>
       ),
       headerLeft: (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.goBack(null)}>
           <Block flex={false} style={{ top: -17 }}>
             <Image
               resizeMode="contain"

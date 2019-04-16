@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Font } from "react-native";
+import { StyleSheet, Font, ImageBackground } from "react-native";
 // import { AppLoading, Font } from "expo";
 
 import Navigation from "./src/navigation";
@@ -37,7 +37,15 @@ export default class App extends React.Component {
 
     return (
       <Block>
-        <Navigation />
+        <ImageBackground
+          source={{
+            uri:
+              "https://i.pinimg.com/564x/68/bc/eb/68bcebd93d822b35df5f6a2b4a7c4e4c.jpg"
+          }}
+          style={{ flex: 1 }}
+        >
+          <Navigation />
+        </ImageBackground>
       </Block>
     );
   }

@@ -25,4 +25,37 @@ const project = [
   }
 ];
 
-export { project };
+const skill = [
+  {
+    id: 1,
+    name: "Laravel",
+    grade: 0.9,
+    point: 90
+  },
+  {
+    id: 2,
+    name: "Express Js",
+    grade: 0.7,
+    point: 70
+  },
+  {
+    id: 3,
+    name: "GO",
+    grade: 0.6,
+    point: 60
+  },
+  {
+    id: 4,
+    name: "React Native",
+    grade: 0.5,
+    point: 50
+  },
+  {
+    id: 5,
+    name: "Ruby",
+    grade: 0.6,
+    point: 60
+  }
+];
+
+export { project, skill };

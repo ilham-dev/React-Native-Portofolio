@@ -11,7 +11,6 @@ import {
   Card,
   TouchableOpacity,
   Image,
-  ImageBackground,
   ScrollView
 } from "react-native";
 import Timeline from "react-native-timeline-listview";
@@ -21,13 +20,20 @@ import {
   Badge,
   Card as Kartu,
   Text,
-  Progress,
-  CardImage
+  ImageBackground
 } from "../components";
 
 export default class Repo extends Component {
   constructor() {
     super();
+  }
+
+  state = {
+    skill: []
+  };
+
+  componentDidMount() {
+    this.setState({ skill: this.props.skill });
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -59,80 +65,18 @@ export default class Repo extends Component {
       <View style={styles.container}>
         <ScrollView style={styles.welcome}>
           {/* <K shadow style={{ paddingVertical: theme.sizes.base * 2 }}> */}
-          <View style={{ borderRadius: 15, marginBottom: theme.sizes.base }}>
-            <ImageBackground
-              source={{
-                uri:
-                  "https://colorlib.com/preview/theme/sierra/img/home-slider/slider-bg-1.png"
-              }}
-              style={{ resizeMode: "stretch", padding: 20 }}
-              imageStyle={{ borderRadius: 25 }}
-            >
-              <Block>
-                <Block row space="between" style={{ paddingLeft: 6 }}>
-                  <Text body spacing={0.7} black bold>
-                    Breaking
-                  </Text>
-                  <Text caption spacing={0.7} black bold>
-                    8.1
-                  </Text>
-                </Block>
-                <Progress value={0.81} />
-              </Block>
-            </ImageBackground>
-          </View>
-
-          <ImageBackground
-            source={{
-              uri:
-                "https://colorlib.com/preview/theme/sierra/img/home-slider/slider-bg-1.png"
-            }}
-            style={{ resizeMode: "stretch", padding: 20 }}
-            imageStyle={{ borderRadius: 25 }}
-          >
-            <Block>
-              <Block row space="between" style={{ paddingLeft: 6 }}>
-                <Text body spacing={0.7} black bold>
-                  Breaking
-                </Text>
-                <Text caption spacing={0.7} black bold>
-                  8.1
-                </Text>
-              </Block>
-              <Progress value={0.81} />
-            </Block>
-          </ImageBackground>
-          <Kartu shadow style={{ marginBottom: theme.sizes.base }}>
-            <Block style={{ marginBottom: theme.sizes.base }}>
-              <Block row space="between" style={{ paddingLeft: 6 }}>
-                <Text body spacing={0.7}>
-                  Speeding
-                </Text>
-                <Text caption spacing={0.7}>
-                  9.8
-                </Text>
-              </Block>
-              <Progress value={0.98} />
-            </Block>
-          </Kartu>
-          <Kartu shadow style={{ marginBottom: theme.sizes.base }}>
-            <Block style={{ marginBottom: theme.sizes.base }}>
-              <Block row space="between" style={{ paddingLeft: 6 }}>
-                <Text body spacing={0.7}>
-                  Distracted Driving
-                </Text>
-                <Text caption spacing={0.7}>
-                  7.4
-                </Text>
-              </Block>
-              <Progress value={0.74} />
-            </Block>
-          </Kartu>
+          {this.state.skill.map((obj, index) => (
+            <ImageBackground key={index} data={obj} />
+          ))}
         </ScrollView>
       </View>
     );
   }
 }
+
+Repo.defaultProps = {
+  skill: mocks.skill
+};
 
 const styles = StyleSheet.create({
   container: {
