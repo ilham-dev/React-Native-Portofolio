@@ -79,11 +79,17 @@ Repo.defaultProps = {
 };
 
 const styles = StyleSheet.create({
+  welcome: {
+    // flex: 1,
+    // paddingVertical: theme.sizes.padding,
+    paddingHorizontal: theme.sizes.padding,
+    backgroundColor: theme.colors.gray4,
+    paddingBottom: 40,
+    paddingTop: 20
+  },
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "white",
-    backgroundColor: theme.colors.gray4
+    backgroundColor: "white"
   },
   list: {
     flex: 1

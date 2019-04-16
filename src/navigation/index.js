@@ -4,6 +4,7 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 import Home from "../pages/HomeScreen";
 import Repo from "../pages/RepoScreen";
 import About from "../pages/AboutScreen";
+import Experience from "../pages/ExperienceScreen";
 
 import { theme } from "../constants";
 
@@ -11,7 +12,8 @@ const screens = createStackNavigator(
   {
     Home,
     Repo,
-    About
+    About,
+    Experience
   },
   {
     defaultNavigationOptions: {

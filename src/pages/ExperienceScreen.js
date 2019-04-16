@@ -16,23 +16,24 @@ import Timeline from "react-native-timeline-listview";
 import { theme, mocks } from "../constants";
 import { Block, Badge, Card, Text } from "../components";
 
-export default class About extends Component {
+export default class Experience extends Component {
   constructor() {
     super();
+    // mocks.experience;
   }
 
   state = {
-    education: []
+    experience: []
   };
 
   componentDidMount() {
-    this.setState({ education: this.props.education });
+    this.setState({ experience: this.props.experience });
   }
 
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: (
-        <Text style={[theme.fonts.header, { paddingLeft: 0 }]}>Education</Text>
+        <Text style={[theme.fonts.header, { paddingLeft: 0 }]}>Experience</Text>
       ),
       headerLeft: (
         <TouchableOpacity onPress={() => navigation.goBack(null)}>
@@ -62,7 +63,7 @@ export default class About extends Component {
               resizeMode="contain"
               source={{
                 uri:
-                  "https://health.maryland.gov/tsd/PublishingImages/continuing-education-icon.gif?Mobile=1&Source=%2Ftsd%2F%5Flayouts%2Fmobile%2Fdispform%2Easpx%3FList%3D27ddee0d%252D16cc%252D4f0e%252Dac01%252Daf5c0aad861e%26View%3D19030058%252Dc301%252D4ed7%252D880e%252D82e6c4221800%26ID%3D152%26CurrentPage%3D1"
+                  "https://botcore.ai/wp-content/uploads/2018/04/quality-assurance.png"
               }}
               style={styles.avatarmember}
             />
@@ -78,7 +79,7 @@ export default class About extends Component {
           >
             <Timeline
               style={styles.list}
-              data={this.state.education}
+              data={this.state.experience}
               circleSize={20}
               circleColor="rgb(45,156,219)"
               lineColor="rgb(45,156,219)"
@@ -103,8 +104,8 @@ export default class About extends Component {
   }
 }
 
-About.defaultProps = {
-  education: mocks.education
+Experience.defaultProps = {
+  experience: mocks.experience
 };
 
 const styles = StyleSheet.create({
@@ -116,10 +117,6 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     paddingTop: 20
   },
-  container: {
-    flex: 1,
-    backgroundColor: "white"
-  },
   avatarmember: {
     // borderColor: "#fff",
     borderRadius: 85,
@@ -130,15 +127,13 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     zIndex: 1
   },
-  icons: {
-    borderColor: "#fff",
-    borderRadius: 85,
-    borderWidth: 3,
-    height: 40,
-    marginBottom: 15,
-    width: 40
+  container: {
+    flex: 1,
+    // padding: 20,
+    backgroundColor: "white"
   },
   list: {
     flex: 1
+    // marginTop: 20
   }
 });

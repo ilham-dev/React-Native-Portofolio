@@ -13,8 +13,6 @@ import rgba from "hex-to-rgba";
 import LinearGradient from "react-native-linear-gradient";
 
 import { Block, Badge, Card, Text } from "../components";
-import { styles as blockStyles } from "../components/Block";
-import { styles as cardStyles } from "../components/Card";
 import { theme, mocks } from "../constants";
 
 const { width } = Dimensions.get("window");
@@ -173,16 +171,23 @@ export default class Welcome extends Component {
               <Block flex={false} color="gray3" style={styles.vLine} />
 
               <Block center>
-                <Image
-                  resizeMode="contain"
-                  source={{
-                    uri: "https://img.icons8.com/dusk/64/000000/report-card.png"
-                  }}
-                  style={styles.icons}
-                />
-                <Text body spacing={0.7}>
-                  Experience
-                </Text>
+                <TouchableOpacity
+                  activeOpacity={0.8}
+                  style={styles.center}
+                  onPress={() => navigation.navigate("Experience")}
+                >
+                  <Image
+                    resizeMode="contain"
+                    source={{
+                      uri:
+                        "https://img.icons8.com/dusk/64/000000/report-card.png"
+                    }}
+                    style={styles.icons}
+                  />
+                  <Text body spacing={0.7}>
+                    Experience
+                  </Text>
+                </TouchableOpacity>
               </Block>
             </Block>
           </Block>
