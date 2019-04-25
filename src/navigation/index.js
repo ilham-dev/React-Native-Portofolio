@@ -3,6 +3,7 @@ import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import Home from "../pages/HomeScreen";
 import Repo from "../pages/RepoScreen";
+import Skill from "../pages/SkillScreen";
 import About from "../pages/AboutScreen";
 import Experience from "../pages/ExperienceScreen";
 
@@ -12,6 +13,7 @@ const screens = createStackNavigator(
   {
     Home,
     Repo,
+    Skill,
     About,
     Experience
   },

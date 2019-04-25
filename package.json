@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@mindinventory/react-native-tab-bar-interaction": "github:mindinventory/react-native-tab-bar-interaction",
+    "axios": "^0.18.0",
     "hex-to-rgba": "^1.0.2",
     "react": "16.8.3",
     "react-native": "0.59.4",
@@ -20,7 +21,7 @@
     "react-native-svg": "^5.4.0",
     "react-native-timeline-listview": "^0.2.3",
     "react-native-vector-icons": "^6.4.1",
-    "react-navigation": "^3.7.1"
+    "react-navigation": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

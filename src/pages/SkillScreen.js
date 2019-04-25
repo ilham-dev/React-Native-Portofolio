@@ -22,9 +22,8 @@ import {
   Text,
   ImageBackground
 } from "../components";
-import Axios from "axios";
 
-export default class Repo extends Component {
+export default class Skill extends Component {
   constructor() {
     super();
   }
@@ -35,18 +34,6 @@ export default class Repo extends Component {
 
   componentDidMount() {
     this.setState({ skill: this.props.skill });
-    this.getRepo();
-  }
-
-  getRepo() {
-    Axios.get("https://api.github.com/users/ilham-dev/repos")
-      .then(response => {
-        console.log("response -->", response.data);
-        this.setState({ skill: response.data });
-      })
-      .catch(error => {
-        console.log("error get user -->", error);
-      });
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -87,7 +74,7 @@ export default class Repo extends Component {
   }
 }
 
-Repo.defaultProps = {
+Skill.defaultProps = {
   skill: mocks.skill
 };
 

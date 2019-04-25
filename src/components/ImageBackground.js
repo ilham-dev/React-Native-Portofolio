@@ -25,14 +25,19 @@ const ImageBackgrounds = props => (
   >
     <Block>
       <Block row space="between" style={{ paddingLeft: 6 }}>
-        <Text body spacing={0.7} black bold>
+        <Text spacing={0.7} black bold>
           {props.data.name}
         </Text>
-        <Text caption spacing={0.7} black bold>
-          {props.data.point}
+        <Text caption white bold>
+          {props.data.language}
         </Text>
       </Block>
-      <Progress value={props.data.grade} />
+      <Block style={{ paddingLeft: 6 }}>
+        <Text small spacing={0.7} black bold>
+          {props.data.description}
+        </Text>
+      </Block>
+      {/* <Progress value={props.data.grade} /> */}
     </Block>
   </ImageBackground>
 );
